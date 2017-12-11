@@ -33,7 +33,8 @@ ext.deps = [
     ],
 
     kotlin: [
-        stdlib: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+        stdlib: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin",
+        junittest: "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin"
     ],
 
     support: [

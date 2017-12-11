@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 def props = new Properties()
-props.load new FileInputStream(new File('local.properties'))
+props.load new FileInputStream(rootProject.file('local.properties'))
 
 android {
 
@@ -30,6 +30,8 @@ android {
 
   sourceSets {
     main.java.srcDirs += 'src/main/kotlin'
+    test.java.srcDirs += 'src/test/kotlin'
+    androidTest.java.srcDirs += 'src/androidTest/kotlin'
   }
 
   buildTypes {
@@ -91,4 +93,11 @@ dependencies {
   compileOnly deps.jsr250
 
   implementation deps.timber
+
+  testImplementation deps.gson
+  testImplementation deps.kotlin.stdlib
+  testImplementation deps.kotlin.junittest
+  testImplementation 'org.amshove.kluent:kluent:1.14'
+  testImplementation 'com.nhaarman:mockito-kotlin:1.5.0'
+  testImplementation 'android.arch.core:core-testing:1.0.0'
 }
