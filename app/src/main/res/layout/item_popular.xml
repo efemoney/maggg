@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- 2:3 aspect ratio -->
+    <com.efemoney.maggg.ui.widget.AspectRatioImageView
+        android:id="@+id/poster"
+        tools:src="@android:drawable/star_on"
+        app:aspectRatio="0.67"
+        app:aspectRatioEnabled="true"
+        app:dominantMeasurement="width"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/poster_content_desc"
+        android:transitionName="@string/image_grid_to_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</layout>

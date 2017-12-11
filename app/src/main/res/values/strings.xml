@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Maggg</string>
+
+    <string name="image_grid_to_detail">image_grid_to_detail</string>
+
+    <string name="poster_content_desc">A movie poster</string>
+    <string name="backdrop_content_desc">A movie backdrop</string>
+
+    <string name="error">An error occurred</string>
+
+    <string name="dummy">Heu, mineralis! You have to travel, and follow freedom by your experimenting.
+        \n\nAs i have viewed you, so you must facilitate one another. Try smashing cracker crumps mousse rubed with adobo sauce.
+        \n\nAww, fortune! The vision is a sub-light pathway.
+        \n\nHeu, mineralis! You have to travel, and follow freedom by your experimenting.
+        \n\nNuclear flux, turbulence, and peace.
+        \n\nAww, fortune! The vision is a sub-light pathway.
+        \n\nNuclear flux, turbulence, and peace.
+        \n\nAs i have viewed you, so you must facilitate one another. Try smashing cracker crumps mousse rubed with adobo sauce."
+    </string>
+
+    <string name="format_movie_title">%1$s (%2$s)</string>
+    <string name="format_tagline">“ %1$s “</string>
+
+</resources>

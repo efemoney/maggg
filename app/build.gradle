@@ -1,0 +1,94 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+def props = new Properties()
+props.load new FileInputStream(new File('local.properties'))
+
+android {
+
+  compileSdkVersion 27
+  buildToolsVersion "27.0.2"
+
+  defaultConfig {
+    applicationId "com.efemoney.maggg"
+
+    minSdkVersion 17
+    targetSdkVersion 27
+
+    versionCode 1
+    versionName "1.0"
+
+    vectorDrawables.useSupportLibrary = true
+
+    buildConfigField 'String', 'TMDB_API_KEY', "\"${props['maggg.tmdbApiKey']}\""
+
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+
+  dataBinding.enabled = true
+
+  sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+  }
+
+  buildTypes {
+
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+dependencies {
+
+  kapt deps.databinding.compiler
+
+  implementation deps.kotlin.stdlib
+
+  implementation deps.support.design
+  implementation deps.support.palette
+  implementation deps.support.appcompat
+  implementation deps.support.preference
+  implementation deps.support.constraint
+
+  implementation deps.gson
+
+  implementation deps.okhttp.main
+  implementation deps.okhttp.logging
+
+  implementation deps.retrofit.main
+  implementation deps.retrofit.rx2adapter
+  implementation deps.retrofit.gsonconverter
+
+  implementation deps.rx.java
+  implementation deps.rx.android
+
+  implementation deps.rxrelay
+
+  implementation deps.rxbindingkotlin.main
+  implementation deps.rxbindingkotlin.appcompat
+  implementation deps.rxbindingkotlin.recyclerview
+
+  kapt deps.arch.lifecycle.compiler
+  implementation deps.arch.lifecycle.extensions
+  implementation deps.arch.lifecycle.reactivestreams
+
+  kapt deps.arch.room.compiler
+  implementation deps.arch.room.runtime
+  implementation deps.arch.room.rxjava
+
+  kapt deps.glide.compiler
+  implementation deps.glide.main
+  implementation deps.glide.okhttpintegration
+
+  kapt deps.dagger.compiler
+  kapt deps.dagger.androidprocessor
+  implementation deps.dagger.main
+  implementation deps.dagger.android
+  implementation deps.dagger.androidsupport
+  compileOnly deps.jsr250
+
+  implementation deps.timber
+}

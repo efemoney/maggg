@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:titleEnabled="false">
+
+                <com.efemoney.maggg.ui.widget.AspectRatioImageView
+                    android:id="@+id/backdrop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/poster_content_desc"
+                    app:aspectRatio="1.5"
+                    app:aspectRatioEnabled="true"
+                    app:dominantMeasurement="width"
+                    app:layout_collapseMode="parallax" />
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="168dp"
+                    app:layout_collapseMode="pin" /> <!-- 3 x actionBarSize -->
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            app:behavior_overlapTop="56dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.efemoney.maggg.ui.widget.AspectRatioImageView
+                    android:id="@+id/poster"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/poster_content_desc"
+                    android:transitionName="@string/image_grid_to_detail"
+                    app:aspectRatio="0.76"
+                    app:aspectRatioEnabled="true"
+                    app:dominantMeasurement="width"
+                    app:layout_constrainedHeight="true"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintStart_toStartOf="@+id/guide_left_16"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@android:drawable/star_on" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@android:color/white"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintEnd_toEndOf="@+id/guide_right_16"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guide_left_152"
+                    app:layout_constraintTop_toTopOf="@+id/guide_top_56"
+                    tools:text="Movie Title (2017)" />
+
+                <TextView
+                    android:id="@+id/rating"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="@+id/guide_right_16"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guide_left_152"
+                    app:layout_constraintTop_toBottomOf="@+id/title"
+                    app:layout_constraintWidth_default="wrap"
+                    tools:drawableLeft="@drawable/ic_star"
+                    tools:text="4.78" />
+
+                <TextView
+                    android:id="@+id/genres"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ellipsize="end"
+                    android:textStyle="italic"
+                    android:typeface="sans"
+                    app:layout_constraintEnd_toEndOf="@+id/guide_right_16"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guide_left_152"
+                    app:layout_constraintTop_toBottomOf="@+id/rating"
+                    tools:text="Classical, Musical, Horror, Classical, Romance" />
+
+                <TextView
+                    android:id="@+id/tagline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:textSize="16sp"
+                    app:layout_constrainedHeight="true"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintEnd_toEndOf="@+id/guide_right_16"
+                    app:layout_constraintStart_toStartOf="@+id/guide_left_16"
+                    app:layout_constraintTop_toBottomOf="@+id/barrier_top_content"
+                    tools:text="“ Your fears are unleashed “" />
+
+                <TextView
+                    android:id="@+id/overview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:layout_marginTop="24dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/guide_right_16"
+                    app:layout_constraintStart_toStartOf="@+id/guide_left_16"
+                    app:layout_constraintTop_toBottomOf="@+id/tagline"
+                    tools:text="@string/dummy" />
+
+                <ProgressBar
+                    android:id="@+id/progress"
+                    style="@style/Widget.AppCompat.ProgressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    app:layout_constrainedHeight="true"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/empty_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="16dp"
+                    android:drawableTint="@color/accent"
+                    android:drawableTintMode="src_in"
+                    android:drawableTop="@drawable/ic_warning"
+                    android:visibility="gone"
+                    app:layout_constrainedHeight="true"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="An error occurred"
+                    tools:visibility="gone" />
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guide_top_0"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="0dp" />
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guide_left_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="16dp" />
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guide_right_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="16dp" />
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guide_left_152"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="152dp" />
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guide_top_56"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="56dp" />
+
+                <android.support.constraint.Barrier
+                    android:id="@+id/barrier_top_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="poster,genres" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>
